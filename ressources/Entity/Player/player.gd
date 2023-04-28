@@ -24,29 +24,3 @@ func move():
 	).normalized()
 	velocity = direction * speed
 	move_and_slide()
-
-"""
-func define_state():
-	match current_state:
-		IDLE:
-			if is_direction_key_press():
-				change_state(WALK)
-			pass
-		WALK:
-			if is_direction_key_press() == false:
-				change_state(IDLE)
-			pass
-		
-func handle_state():
-	match current_state:
-		IDLE:
-			self.animation.play("idle")
-		WALK:
-			self.animation.play("walk_right")
-
-func change_state(state: String) -> void:
-	current_state = state
-
-func is_direction_key_press():
-	return Input.is_action_pressed("right") || Input.is_action_pressed("left") || Input.is_action_pressed("up") || Input.is_action_pressed("down")
-"""
