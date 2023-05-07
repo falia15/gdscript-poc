@@ -7,3 +7,7 @@ func change_state() -> StateBase:
 
 func play_animation(animation: AnimationPlayer) -> void:
 	animation.play("walk_right")
+
+func set_facing_direction(sprite: Sprite2D, direction: Vector2) -> void:
+	if is_moving_horizontaly():
+		sprite.flip_h = direction.x < 0

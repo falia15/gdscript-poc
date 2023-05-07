@@ -10,17 +10,22 @@ func _ready():
 	player_context = Context.new()
 
 func _physics_process(_delta):
-	move()
+	var direction = get_direction()
+	move(direction)
 	
 	player_context.define_state()
 	var state = player_context.get_current_state()
 	state.play_animation(self.animation)
+	state.set_facing_direction(self.sprite, direction)
 
-func move():
+func move(direction: Vector2) -> void:
+	velocity = direction * speed
+	move_and_slide()
+
+func get_direction() -> Vector2:
 	var direction = Vector2.ZERO
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
-	velocity = direction * speed
-	move_and_slide()
+	return direction
