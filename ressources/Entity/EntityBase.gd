@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var hp_max: int = 100
 @export var hp: int = hp_max
 @export var defense: int = 0
-@export var speed: int = 200
+@export var speed: int = 120
 
 @onready var sprite = $Sprite2D
 @onready var collisionShape = $CollisionShape2D
