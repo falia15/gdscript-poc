@@ -1,6 +1,6 @@
 extends Node
 
-class_name Context
+class_name StateMachine
 
 var Idle = load("res://ressources/Player/StateMachine/States/Idle.gd")
 var StateBase = load("res://ressources/Player/StateMachine/States/Base/StateBase.gd")

@@ -1,13 +1,13 @@
 extends "res://ressources/Entity/EntityBase.gd"
 
 @onready
-var Context = preload("res://ressources/Player/StateMachine/Context.gd")
+var StateMachine = preload("res://ressources/Player/StateMachine/StateMachine.gd")
 var player_context
 
 const JUMP_VELOCITY = -400.0
 
 func _ready():
-	player_context = Context.new()
+	player_context = StateMachine.new()
 
 func _physics_process(_delta):
 	var direction = get_direction()
