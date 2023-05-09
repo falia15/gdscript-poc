@@ -1,9 +1,8 @@
-extends Node
+extends StateBase
+class_name StateBasePlayer
 
-class_name StateBase
-
-var Idle = load("res://ressources/Player/StateMachine/States/Idle.gd")
-var Walk = load("res://ressources/Player/StateMachine/States/Walk.gd")
+var Idle = load("res://ressources/Player/States/Idle.gd")
+var Walk = load("res://ressources/Player/States/Walk.gd")
 
 func is_direction_key_press() -> bool:
 	return is_moving_horizontaly() || is_moving_verticaly()

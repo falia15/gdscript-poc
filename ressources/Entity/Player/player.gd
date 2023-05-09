@@ -1,7 +1,7 @@
 extends "res://ressources/Entity/EntityBase.gd"
 
 @onready
-var StateMachine = preload("res://ressources/Player/StateMachine/StateMachine.gd")
+var StateMachine = preload("res://ressources/Player/StateMachine.gd")
 var player_context
 
 const JUMP_VELOCITY = -400.0

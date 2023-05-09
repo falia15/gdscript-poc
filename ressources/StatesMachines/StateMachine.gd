@@ -1,14 +1,11 @@
 extends Node
-
 class_name StateMachine
 
-var Idle = load("res://ressources/Player/StateMachine/States/Idle.gd")
-var StateBase = load("res://ressources/Player/StateMachine/States/Base/StateBase.gd")
-
-var current_state
+var current_state: StateBase
+var default_state: StateBase
 
 func _init() -> void:
-	current_state = Idle.new()
+	current_state = default_state
 
 func get_current_state() -> StateBase:
 	return current_state

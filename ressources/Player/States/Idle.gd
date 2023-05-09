@@ -1,6 +1,6 @@
-extends "res://ressources/Player/StateMachine/States/Base/StateBase.gd"
+extends StateBasePlayer
 
-func change_state() -> StateBase:
+func change_state() -> StateBasePlayer:
 	if is_direction_key_press():
 		return Walk.new()
 	return self
