@@ -16,3 +16,6 @@ func play_animation(animation: AnimationPlayer) -> void:
 	animation.play(animation_name)
 	await animation.animation_finished
 	animation_played = true
+
+func can_move() -> bool:
+	return false

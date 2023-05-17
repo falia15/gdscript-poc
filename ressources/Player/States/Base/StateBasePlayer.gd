@@ -22,3 +22,6 @@ func is_moving_verticaly() -> bool:
 
 func is_attack_key_pressed():
 	return Input.is_action_pressed("attack")
+	
+func can_move() -> bool:
+	return true

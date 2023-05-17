@@ -10,13 +10,14 @@ func _ready():
 	player_context = StateMachine.new()
 
 func _physics_process(_delta):
-	var direction = get_direction()
-	move(direction)
-	
 	player_context.define_state()
 	var state = player_context.get_current_state()
 	state.play_animation(self.animation)
-	state.set_facing_direction(self.sprite, direction)
+	
+	if state.can_move():
+		var direction = get_direction()
+		move(direction)
+		state.set_facing_direction(self.sprite, direction)
 
 func move(direction: Vector2) -> void:
 	velocity = direction * speed
