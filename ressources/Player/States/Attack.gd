@@ -19,3 +19,11 @@ func play_animation(animation: AnimationPlayer) -> void:
 
 func can_move() -> bool:
 	return false
+
+func set_facing_direction(
+	sprite: Sprite2D, 
+	_direction: Vector2, 
+	global_position: Vector2, 
+	global_mouse_position: Vector2
+) -> void:
+	sprite.flip_h = global_position.x > global_mouse_position.x

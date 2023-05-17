@@ -14,10 +14,16 @@ func _physics_process(_delta):
 	var state = player_context.get_current_state()
 	state.play_animation(self.animation)
 	
+	var direction = get_direction()
 	if state.can_move():
-		var direction = get_direction()
 		move(direction)
-		state.set_facing_direction(self.sprite, direction)
+
+	state.set_facing_direction(
+		self.sprite, 
+		direction, 
+		get_global_position(), 
+		get_global_mouse_position()
+	)
 
 func move(direction: Vector2) -> void:
 	velocity = direction * speed
@@ -30,3 +36,6 @@ func get_direction() -> Vector2:
 		Input.get_axis("up", "down")
 	).normalized()
 	return direction
+
+func get_mouse_direction():
+	return get_viewport().get_mouse_position()

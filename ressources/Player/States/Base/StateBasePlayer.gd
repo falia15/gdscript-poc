@@ -11,7 +11,13 @@ func is_direction_key_press() -> bool:
 func play_animation(_animation: AnimationPlayer) -> void:
 	print("play_animation from StateBase not overriden")
 
-func set_facing_direction(_sprite: Sprite2D, _direction: Vector2) -> void:
+# TODO refacto it when I understand gdscript better, too many arguments
+func set_facing_direction(
+	_sprite: Sprite2D, 
+	_direction: Vector2, 
+	_global_position: Vector2, 
+	_global_mouse_position: Vector2
+) -> void:
 	pass
 
 func is_moving_horizontaly() -> bool:
