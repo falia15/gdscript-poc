@@ -8,9 +8,6 @@ var Attack = load("res://ressources/Player/States/Attack.gd")
 func is_direction_key_press() -> bool:
 	return is_moving_horizontaly() || is_moving_verticaly()
 
-func play_animation(_animation: AnimationPlayer) -> void:
-	print("play_animation from StateBase not overriden")
-
 # TODO refacto it when I understand gdscript better, too many arguments
 func set_facing_direction(
 	_sprite: Sprite2D, 
@@ -29,9 +26,6 @@ func is_moving_verticaly() -> bool:
 func is_attack_key_pressed():
 	return Input.is_action_pressed("attack")
 	
-func can_move() -> bool:
-	return true
-
 func is_moving(direction: String) -> bool:
 	var first_action = "up"
 	var second_action = "down"
