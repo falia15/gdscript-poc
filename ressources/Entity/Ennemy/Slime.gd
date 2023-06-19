@@ -1,15 +1,16 @@
 extends "res://ressources/Entity/EntityBase.gd"
 
 @onready
-var StateMachine = preload("res://ressources/Enemy/StateMachine.gd")
+var state_machine = $StateMachine
 var enemy_context
 
 func _ready():
-	enemy_context = StateMachine.new()
+	#enemy_context = StateMachine.new()
+	pass
 
 func _physics_process(_delta) -> void:
-	enemy_context.define_state()
-	var state = enemy_context.get_current_state()
+	state_machine.define_state()
+	var state = state_machine.get_current_state()
 	state.play_animation(self.animation)
 
 	state.set_facing_direction(
@@ -19,3 +20,5 @@ func _physics_process(_delta) -> void:
 		get_global_mouse_position()
 	)
 
+	#print(state.get_name_state())
+	#print(is_detected)

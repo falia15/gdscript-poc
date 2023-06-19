@@ -1,19 +1,23 @@
 extends Node
 class_name StateMachine
 
-var current_state: StateBase
-var default_state: StateBase
+@onready var current_state = "idle"
 
-func _init() -> void:
-	current_state = default_state
+@onready
+var states = {
+	idle = $Idle,
+	walk = $Walk,
+	attack = $Attack
+}
 
 func get_current_state() -> StateBase:
-	return current_state
+	return states[current_state]
 	
 func define_state() -> void:
-	var new_state = current_state.change_state()
+	var new_state = get_current_state().change_state()
+
 	if new_state != current_state:
 		change_state(new_state)
 
-func change_state(state: StateBase) -> void:
+func change_state(state: String) -> void:
 	current_state = state

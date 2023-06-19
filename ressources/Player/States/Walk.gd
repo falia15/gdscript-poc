@@ -1,11 +1,11 @@
 extends StateBasePlayer
 
-func change_state() -> StateBasePlayer:
+func change_state():
 	if is_direction_key_press() == false:
-		return Idle.new()
+		return states.idle
 	if is_attack_key_pressed():
-		return Attack.new()
-	return self
+		return states.attack
+	return states.walk
 
 func play_animation(animation: AnimationPlayer) -> void:
 	animation.play("walk_right")

@@ -3,19 +3,18 @@ extends StateBasePlayer
 var animation_name = "attack_right"
 var animation_played = false
 
-func change_state() -> StateBasePlayer:
+func change_state():
 	if animation_played == false:
-		return self
+		return states.attack
 	
+	animation_played = false
 	if is_direction_key_press() == false:
-		return Idle.new()
+		return states.idle
 	else:
-		return Walk.new()
+		return states.walk
 
 func play_animation(animation: AnimationPlayer) -> void:
 	animation.play(animation_name)
-	await animation.animation_finished
-	animation_played = true
 
 func can_move() -> bool:
 	return false
@@ -27,3 +26,7 @@ func set_facing_direction(
 	global_mouse_position: Vector2
 ) -> void:
 	sprite.flip_h = global_position.x > global_mouse_position.x
+
+func _on_animation_player_animation_finished(anim_name):
+	animation_played = true
+	print("anim finish")

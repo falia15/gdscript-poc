@@ -1,5 +1,8 @@
 extends StateBaseEnnemy
 
+func get_state_name():
+	return "walk"
+
 func change_state() -> StateBase:
 	return self
 

@@ -1,7 +1,5 @@
 extends StateMachine
 
-var Idle = preload("res://ressources/Enemy/States/Idle.gd")
+#var Idle = preload("res://ressources/Enemy/States/Idle.gd")
+@onready var Idle = $Idle
 
-func _init():
-	default_state = Idle.new()
-	super()
