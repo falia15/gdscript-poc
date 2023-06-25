@@ -6,3 +6,7 @@ func get_states():
 		walk = $Walk,
 		attack = $Attack
 	}
+
+func init():
+	for child in get_children():
+		child.states = get_states()

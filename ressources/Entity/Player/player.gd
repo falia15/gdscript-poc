@@ -5,6 +5,9 @@ var state_machine = $StateMachine
 
 const JUMP_VELOCITY = -400.0
 
+func _ready():
+	state_machine.init()
+
 func _physics_process(_delta):
 	state_machine.define_state()
 	var state = state_machine.get_current_state()

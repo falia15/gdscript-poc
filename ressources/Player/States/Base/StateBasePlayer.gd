@@ -1,12 +1,8 @@
 extends StateBase
 class_name StateBasePlayer
 
-var states = { idle = "idle", walk = "walk", attack = "attack" }
-
-#var Idle = load("res://ressources/Player/States/Idle.gd")
-#var Walk = load("res://ressources/Player/States/Walk.gd")
-#var Attack = load("res://ressources/Player/States/Attack.gd")
-
+#var states = { idle = "idle", walk = "walk", attack = "attack" }
+@export var states: Dictionary
 
 func is_direction_key_press() -> bool:
 	return is_moving_horizontaly() || is_moving_verticaly()
