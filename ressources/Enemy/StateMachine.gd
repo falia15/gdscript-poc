@@ -1,5 +1,10 @@
 extends StateMachine
 
-#var Idle = preload("res://ressources/Enemy/States/Idle.gd")
-@onready var Idle = $Idle
-
+func get_states():
+	return {
+		idle = $Idle,
+		walk = $Walk,
+		#patroling = $Patroling,
+		#chasing = $Chasing,
+		#returning = $Returning
+	}

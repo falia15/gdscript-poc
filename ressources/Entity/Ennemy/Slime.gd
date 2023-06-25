@@ -2,11 +2,9 @@ extends "res://ressources/Entity/EntityBase.gd"
 
 @onready
 var state_machine = $StateMachine
-var enemy_context
 
 func _ready():
-	#enemy_context = StateMachine.new()
-	pass
+	state_machine.init()
 
 func _physics_process(_delta) -> void:
 	state_machine.define_state()
@@ -19,6 +17,3 @@ func _physics_process(_delta) -> void:
 		get_global_position(), 
 		get_global_mouse_position()
 	)
-
-	#print(state.get_name_state())
-	#print(is_detected)

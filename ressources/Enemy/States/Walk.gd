@@ -4,7 +4,7 @@ func get_state_name():
 	return "walk"
 
 func change_state() -> StateBase:
-	return self
+	return states.walk
 
 func play_animation(animation: AnimationPlayer) -> void:
 	animation.play("walk_right")

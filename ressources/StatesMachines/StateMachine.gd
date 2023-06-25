@@ -3,6 +3,10 @@ class_name StateMachine
 
 @onready var current_state = $Idle
 
+func init():
+	for child in get_children():
+		child.states = get_states()
+
 func get_states():
 	return {}
 
