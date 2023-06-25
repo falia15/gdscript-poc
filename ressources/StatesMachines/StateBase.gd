@@ -9,5 +9,6 @@ func play_animation(_animation: AnimationPlayer) -> void:
 func can_move() -> bool:
 	return true
 
+# for debugging purpose
 func get_state_name():
 	return "default state"
