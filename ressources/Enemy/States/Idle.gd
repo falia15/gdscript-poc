@@ -1,8 +1,5 @@
 extends StateBaseEnnemy
 
-func allow_detection():
-	return true
-
 func get_state_name():
 	return "idle"
 
