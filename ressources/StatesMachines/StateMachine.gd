@@ -3,15 +3,11 @@ class_name StateMachine
 
 @onready var current_state = "idle"
 
-@onready
-var states = {
-	idle = $Idle,
-	walk = $Walk,
-	attack = $Attack
-}
+func get_states():
+	return {}
 
 func get_current_state() -> StateBase:
-	return states[current_state]
+	return get_states()[current_state]
 	
 func define_state() -> void:
 	var new_state = get_current_state().change_state()
